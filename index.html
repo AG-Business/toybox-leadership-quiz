@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Your Toy Leadership Style</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 32px;
+        }
+        
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        .intro {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .question {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .question h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .option input {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            width: 200px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .results {
+            display: none;
+        }
+        
+        .profile {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .profile h3 {
+            color: #3498db;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        
+        .score-section {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .next-steps {
+            background-color: #d5f5e3;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .next-steps ol {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        
+        .next-steps li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DISCOVER YOUR TOY LEADERSHIP STYLE</h1>
+        <p>What childhood toys reveal about your leadership approach</p>
+    </header>
+
+    <div class="intro">
+        <p>This quiz takes approximately 3 minutes to complete. Select the response that best matches your natural tendencies in each scenario.</p>
+    </div>
+
+    <div id="quiz-container">
+        <div class="question" id="q1">
+            <h3>Question 1: When starting a new project, you typically:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="A">
+                    <span>Lay a strong foundation first and build methodically</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="B">
+                    <span>Assemble a team with complementary abilities</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="C">
+                    <span>Look for the hidden patterns and connections</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="D">
+                    <span>Start molding and reshaping ideas until something exciting emerges</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="E">
+                    <span>Establish clear rules and processes before proceeding</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>Question 2: When faced with an unexpected obstacle, you:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="A">
+                    <span>Carefully reconstruct your approach using proven building blocks</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="B">
+                    <span>Call on different team members' unique strengths to overcome it</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="C">
+                    <span>See it as another piece of the puzzle to solve</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="D">
+                    <span>Reshape your entire approach to transform the obstacle into an opportunity</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="E">
+                    <span>Create a new rule or procedure to address similar obstacles in the future</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>Question 3: Your most valuable contribution to group projects is:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q3" value="A">
+                    <span>Creating structure and stability for everyone to build upon</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="B">
+                    <span>Helping everyone understand their unique role and contribution</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="C">
+                    <span>Finding unexpected connections between seemingly unrelated ideas</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="D">
+                    <span>Bringing creative energy that transforms ordinary tasks into something special</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="E">
+                    <span>Developing systems that ensure fair participation and clear outcomes</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q4">
+            <h3>Question 4: When communicating ideas, you prefer to:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="A">
+                    <span>Use clear, concrete examples that demonstrate foundational concepts</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="B">
+                    <span>Tell stories featuring different characters and perspectives</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="C">
+                    <span>Present a series of clues that lead others to their own discovery</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="D">
+                    <span>Show a malleable vision that others can help shape and refine</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="E">
+                    <span>Explain the rules, steps, and strategic considerations</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q5">
+            <h3>Question 5: You feel most energized when:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q5" value="A">
+                    <span>Building something tangible that you can see take shape</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="B">
+                    <span>Bringing together diverse people who create something amazing as a team</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="C">
+                    <span>Solving a complex problem that requires connecting many pieces</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="D">
+                    <span>Transforming something ordinary into something extraordinary</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="E">
+                    <span>Creating a well-designed system that runs smoothly</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q6">
+            <h3>Question 6: When learning something new, you prefer to:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q6" value="A">
+                    <span>Master the fundamentals before moving to advanced concepts</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="B">
+                    <span>Understand how different roles and perspectives contribute to the whole</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="C">
+                    <span>Find patterns that connect to things you already know</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="D">
+                    <span>Experiment freely, reshaping your understanding as you go</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="E">
+                    <span>Learn the rules thoroughly before attempting any variations</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q7">
+            <h3>Question 7: In stressful situations, others would observe you:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q7" value="A">
+                    <span>Creating stability by focusing on what can be reliably built</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="B">
+                    <span>Helping everyone play to their strengths to manage the crisis</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="C">
+                    <span>Finding the missing piece that solves the underlying problem</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="D">
+                    <span>Adapting quickly with creative solutions no one else considered</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="E">
+                    <span>Referring to established procedures or creating new ones to restore order</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q8">
+            <h3>Question 8: Your workspace or study area is typically:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q8" value="A">
+                    <span>Organized with practical tools and materials readily accessible</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="B">
+                    <span>Decorated with items representing different interests and people</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="C">
+                    <span>Containing unusual objects that help you think and solve problems</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="D">
+                    <span>Constantly changing and evolving based on your current projects</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="E">
+                    <span>Arranged according to clear systems with everything in its proper place</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q9">
+            <h3>Question 9: When receiving feedback, you typically:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q9" value="A">
+                    <span>Consider how it strengthens or weakens your foundation</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="B">
+                    <span>Think about how it affects your role and relationships with others</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="C">
+                    <span>See it as another clue to the bigger picture</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="D">
+                    <span>Use it to reshape your approach entirely if needed</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="E">
+                    <span>Determine if it warrants adjusting your rules or processes</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question" id="q10">
+            <h3>Question 10: Your idea of a successful leader is someone who:</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q10" value="A">
+                    <span>Builds lasting structures that stand the test of time</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="B">
+                    <span>Brings out the unique potential in every team member</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="C">
+                    <span>Solves complex problems by seeing connections others miss</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="D">
+                    <span>Transforms limitations into possibilities through creativity</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="E">
+                    <span>Creates fair systems where everyone understands how to succeed</span>
+                </label>
+            </div>
+        </div>
+
+        <button id="submit-btn">See My Results</button>
+    </div>
+
+    <div id="results" class="results">
+        <h2>Your Toy Leadership Profile</h2>
+        
+        <div class="score-section">
+            <h3>Your Scores:</h3>
+            <p><strong>A (Building Blocks):</strong> <span id="score-a">0</span></p>
+            <p><strong>B (Action Figures):</strong> <span id="score-b">0</span></p>
+            <p><strong>C (Puzzle):</strong> <span id="score-c">0</span></p>
+            <p><strong>D (Clay/Playdough):</strong> <span id="score-d">0</span></p>
+            <p><strong>E (Board Game):</strong> <span id="score-e">0</span></p>
+            
+            <p><strong>Your Primary Style:</strong> <span id="primary-style">Loading...</span></p>
+            <p><strong>Your Secondary Style:</strong> <span id="secondary-style">Loading...</span></p>
+        </div>
+        
+        <div id="primary-profile" class="profile">
+            <h3 id="primary-title">Your Primary Style</h3>
+            <div id="primary-content"></div>
+        </div>
+        
+        <div id="secondary-profile" class="profile">
+            <h3 id="secondary-title">Your Secondary Style</h3>
+            <div id="secondary-content"></div>
+        </div>
+        
+        <div class="next-steps">
+            <h2>Next Steps for Your Leadership Development</h2>
+            <ol>
+                <li><strong>Reflect:</strong> How does your toy leadership style show up in your current activities?</li>
+                <li><strong>Experiment:</strong> Try approaching one upcoming challenge using strategies from your secondary style</li>
+                <li><strong>Connect:</strong> Share your results with friends to discover complementary leadership styles</li>
+                <li><strong>Develop:</strong> Check out our recommended resources for your specific leadership style</li>
+            </ol>
+            <p>Want more personalized leadership development insights? Scan the QR code at our booth to receive your comprehensive profile!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Toybox Leadership | Developed for educational purposes</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            const quizContainer = document.getElementById('quiz-container');
+            const resultsSection = document.getElementById('results');
+            
+            const profileContent = {
+                A: {
+                    title: "Building Blocks Leader",
+                    content: `<p><strong>Core strengths:</strong> You create solid foundations and understand how components work together to build something greater than the sum of its parts. You're methodical, reliable, and focused on creating lasting impact.</p>
+                    <p><strong>In college:</strong> You excel at organizing study groups, breaking down complex assignments into manageable steps, and creating structures that help your clubs achieve consistent results.</p>
+                    <p><strong>In your future career:</strong> You'll be valued for building reliable systems, maintaining quality standards, and creating stability during organizational change.</p>
+                    <p><strong>Growth opportunity:</strong> Practice occasionally experimenting with less structured approaches to unlock unexpected creative potential.</p>
+                    <p><strong>Leadership development recommendation:</strong> Create a personal framework of leadership principles you can build upon throughout your career.</p>`
+                },
+                B: {
+                    title: "Action Figure Leader",
+                    content: `<p><strong>Core strengths:</strong> You naturally recognize people's unique abilities and how different strengths can complement each other. You're excellent at team building, understanding different roles, and inspiring others.</p>
+                    <p><strong>In college:</strong> You shine when assembling project teams, helping everyone find their place in student organizations, and bringing together diverse perspectives.</p>
+                    <p><strong>In your future career:</strong> You'll excel at team leadership, diversity initiatives, and roles requiring understanding of different stakeholder perspectives.</p>
+                    <p><strong>Growth opportunity:</strong> Remember that people, unlike action figures, can develop new capabilities beyond their initial role.</p>
+                    <p><strong>Leadership development recommendation:</strong> Create "role cards" that help you identify the different perspectives needed in various situations.</p>`
+                },
+                C: {
+                    title: "Puzzle Leader",
+                    content: `<p><strong>Core strengths:</strong> You see connections others miss and excel at solving complex problems by identifying patterns. You're patient with complexity and enjoy the process of discovering solutions.</p>
+                    <p><strong>In college:</strong> You're particularly effective at research projects, interdisciplinary studies, and situations requiring analysis of complex information.</p>
+                    <p><strong>In your future career:</strong> You'll be valued for strategic thinking, troubleshooting complex issues, and finding innovative connections between ideas.</p>
+                    <p><strong>Growth opportunity:</strong> Work on communicating your insights clearly to others who don't see the patterns as quickly as you do.</p>
+                    <p><strong>Leadership development recommendation:</strong> Keep a "connection journal" where you record insights about patterns you observe.</p>`
+                },
+                D: {
+                    title: "Clay/Playdough Leader",
+                    content: `<p><strong>Core strengths:</strong> You're incredibly adaptable and see infinite possibilities in every situation. You excel at transforming challenges into opportunities and aren't limited by conventional thinking.</p>
+                    <p><strong>In college:</strong> You thrive in creative projects, improvisational activities, and situations requiring quick adaptation to change.</p>
+                    <p><strong>In your future career:</strong> You'll stand out in innovation roles, change management, and fields requiring constant reinvention.</p>
+                    <p><strong>Growth opportunity:</strong> Creating some consistent elements can help balance your fluid approach and provide stability for team members.</p>
+                    <p><strong>Leadership development recommendation:</strong> Regularly schedule "transformation sessions" where you reshape existing ideas.</p>`
+                },
+                E: {
+                    title: "Board Game Leader",
+                    content: `<p><strong>Core strengths:</strong> You create clear frameworks that allow everyone to participate fairly. You understand the importance of systems and processes while still making room for individual strategy.</p>
+                    <p><strong>In college:</strong> You excel at establishing effective study routines, organizing fair group contribution systems, and creating transparent processes in student organizations.</p>
+                    <p><strong>In your future career:</strong> You'll be valued for policy development, ethical leadership, and creating efficient operational systems.</p>
+                    <p><strong>Growth opportunity:</strong> Practice occasionally bending the rules to accommodate unique situations that don't fit existing frameworks.</p>
+                    <p><strong>Leadership development recommendation:</strong> Create a personal "rulebook" of leadership principles that guide your decisions.</p>`
+                }
+            };
+            
+            submitBtn.addEventListener('click', function() {
+                // Calculate scores
+                const scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+                
+                // Check all questions are answered
+                let allAnswered = true;
+                for (let i = 1; i <= 10; i++) {
+                    const answered = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (!answered) {
+                        allAnswered = false;
+                        alert(`Please answer question ${i} before submitting.`);
+                        break;
+                    } else {
+                        scores[answered.value]++;
+                    }
+                }
+                
+                if (allAnswered) {
+                    // Update score display
+                    document.getElementById('score-a').textContent = scores.A;
+                    document.getElementById('score-b').textContent = scores.B;
+                    document.getElementById('score-c').textContent = scores.C;
+                    document.getElementById('score-d').textContent = scores.D;
+                    document.getElementById('score-e').textContent = scores.E;
+                    
+                    // Determine primary and secondary styles
+                    const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+                    const primaryStyle = sortedScores[0][0];
+                    const secondaryStyle = sortedScores[1][0];
+                    
+                    // Display style names
+                    const styleNames = {
+                        A: "Building Blocks Leader",
+                        B: "Action Figure Leader",
+                        C: "Puzzle Leader",
+                        D: "Clay/Playdough Leader",
+                        E: "Board Game Leader"
+                    };
+                    
+                    document.getElementById('primary-style').textContent = styleNames[primaryStyle];
+                    document.getElementById('secondary-style').textContent = styleNames[secondaryStyle];
+                    
+                    // Fill in profile content
+                    document.getElementById('primary-title').textContent = profileContent[primaryStyle].title;
+                    document.getElementById('primary-content').innerHTML = profileContent[primaryStyle].content;
+                    
+                    document.getElementById('secondary-title').textContent = profileContent[secondaryStyle].title;
+                    document.getElementById('secondary-content').innerHTML = profileContent[secondaryStyle].content;
+                    
+                    // Show results
+                    quizContainer.style.display = 'none';
+                    resultsSection.style.display = 'block';
+                    
+                    // Scroll to top of results
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
